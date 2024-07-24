@@ -52,7 +52,75 @@
             prevision: 'FONASA'
         }];
 
+        // array object de traumatologia
+        const traumatologia = [{
+            hora: '8:00',
+            especialista: 'MARIA PAZ ALTUZARRA',
+            paciente: 'PAULA SANCHEZ',
+            rut: '15554774-5',
+            prevision: 'FONASA'
+        }, {
+            hora: '10:00',
+            especialista: 'RAUL ARAYA',
+            paciente: 'ANGÉLICA NAVAS',
+            rut: '15444147-9',
+            prevision: 'ISAPRE'
+        }, {
+            hora: '10:30',
+            especialista: 'MARIA ARRIAGADA',
+            paciente: 'ANA KLAPP',
+            rut: '17879423-9',
+            prevision: 'ISAPRE'
+        }, {
+            hora: '11:00',
+            especialista: 'ALEJANDRO BADILLA',
+            paciente: 'FELIPE MARDONES',
+            rut: '1547423-6',
+            prevision: 'ISAPRE'
+        }, {
+            hora: '11:30',
+            especialista: 'CECILIA BUDNIK',
+            paciente: 'DIEGO MARRE',
+            rut: '16554741-K',
+            prevision: 'FONASA'
+        }, {
+            hora: '12:00',
+            especialista: 'ARTURO CAVAGNARO',
+            paciente: 'CECILIA MENDEZ',
+            rut: '9747535-8',
+            prevision: 'ISAPRE'
+        }, {
+            hora: '12:30',
+            especialista: 'ANDRES KANACRI',
+            paciente: 'MARCIAL SUAZO',
+            rut: '11254785-5',
+            prevision: 'ISAPRE'
+        }];
 
+
+        let tablaText = `
+         <tr>
+             <th>HORA</th>
+             <th>ESPECIALISTA</th>
+             <th>PACIENTE</th>
+             <th>RUT</th>
+             <th>PREVISIÓN</th>
+         </tr>
+         `
+
+        radiologia.forEach(function (entry) {
+            tablaText += `
+                <tr>
+                    <td>${entry.hora}</td>
+                    <td>${entry.especialista}</td>
+                    <td>${entry.paciente}</td>
+                    <td>${entry.rut}</td>
+                    <td>${entry.prevision}</td>
+                </tr>
+            `;
+        });
+
+        document.getElementById("cuerpo-tabla").innerHTML = tablaText
 
 
     </script>
