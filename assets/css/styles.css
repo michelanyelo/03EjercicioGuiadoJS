@@ -17,6 +17,10 @@ h1 {
     color: var(--green-primary);
 }
 
+h2{
+    color: var(--green-secondary)
+}
+
 table,
 th,
 td {
