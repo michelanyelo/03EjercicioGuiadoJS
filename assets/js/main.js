@@ -1,6 +1,5 @@
 document.write('<p>Estadisticas centro medico ñuñoa</p>')
 
-
 // array object de radiologia
 const radiologia = [{
     hora: '11:00',
@@ -127,6 +126,7 @@ function mostrarEstadisticas(data, primeraClase, ultimaClase) {
         const primeraAtencion = data[0];
         const ultimaAtencion = data[data.length - 1];
 
+        // uso textcontent para asignar solo texto, nada de html
         document.querySelector(primeraClase).textContent += `${primeraAtencion.paciente} - ${primeraAtencion.prevision}`;
         document.querySelector(ultimaClase).textContent += `${ultimaAtencion.paciente} - ${ultimaAtencion.prevision}`;
     }
@@ -162,6 +162,8 @@ function generarTabla(data, tablaId) {
             <td>${entry.prevision}</td>
         </tr>`
     })
+
+    // se le asigna el body de la tabla al id correspondiente
     document.getElementById(tablaId).innerHTML = tablaText;
 }
 

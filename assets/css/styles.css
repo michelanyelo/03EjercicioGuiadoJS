@@ -8,17 +8,21 @@
 }
 
 body * {
-    margin: 2rem;
     box-sizing: border-box;
     font-family: 'Open Sans';
+}
+
+body {
+    margin: 2.5rem;
 }
 
 h1 {
     color: var(--green-primary);
 }
 
-h2{
-    color: var(--green-secondary)
+h2 {
+    color: var(--green-secondary);
+    margin-top: 3.5rem;
 }
 
 table,
