@@ -129,6 +129,9 @@ function mostrarEstadisticas(data, primeraClase, ultimaClase) {
         // uso textcontent para asignar solo texto, nada de html
         document.querySelector(primeraClase).textContent += `${primeraAtencion.paciente} - ${primeraAtencion.prevision}`;
         document.querySelector(ultimaClase).textContent += `${ultimaAtencion.paciente} - ${ultimaAtencion.prevision}`;
+    } else {
+        document.querySelector(primeraClase).textContent = 'No hay datos';
+        document.querySelector(ultimaClase).textContent = 'No hay datos';
     }
 }
 
