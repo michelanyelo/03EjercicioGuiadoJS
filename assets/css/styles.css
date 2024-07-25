@@ -1,6 +1,39 @@
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap");
+
+:root {
+    --green-primary: #40581D;
+    --green-secondary: #729D2D;
+    --green-tertiary: #82c71349;
+
+}
+
+body * {
+    margin: 2rem;
+    box-sizing: border-box;
+    font-family: 'Open Sans';
+}
+
+h1 {
+    color: var(--green-primary);
+}
+
 table,
 th,
 td {
     border: 1px solid black;
     border-collapse: collapse;
+    padding: 0.3rem;
+    text-align: center;
+}
+
+table {
+    width: 50vw;
+}
+
+th {
+    background-color: var(--green-tertiary);
+}
+
+td {
+    color: var(--green-primary);
 }

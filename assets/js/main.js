@@ -1,6 +1,5 @@
-document.write('<p>Estadisticas centro medico ñuñoa</p>');
-// array de especialidades
-const especialidades = ["Radiología", "Traumatología", "Dental"]
+document.write('<p>Estadisticas centro medico ñuñoa</p>')
+
 
 // array object de radiologia
 const radiologia = [{
@@ -33,7 +32,7 @@ const radiologia = [{
     paciente: 'RAMON ULLOA',
     rut: '14989389-K',
     prevision: 'FONASA'
-}];
+}]
 
 // array object de traumatologia
 const traumatologia = [{
@@ -78,7 +77,7 @@ const traumatologia = [{
     paciente: 'MARCIAL SUAZO',
     rut: '11254785-5',
     prevision: 'ISAPRE'
-}];
+}]
 
 
 // array object de dental
@@ -88,36 +87,31 @@ const dental = [{
     paciente: 'MARCELA RETAMAL',
     rut: '11123425-6',
     prevision: 'ISAPRE'
-},
-{
+}, {
     hora: '11:00',
     especialista: 'MARIA PIA ZAÑARTU',
     paciente: 'ANGEL MUÑOZ',
     rut: '9878789-2',
     prevision: 'ISAPRE'
-},
-{
+}, {
     hora: '11:30',
     especialista: 'SCARLETT WITTING',
     paciente: 'MARIO KAST',
     rut: '7998789-5',
     prevision: 'FONASA'
-},
-{
+}, {
     hora: '13:00',
     especialista: 'FRANCISCO VON TEUBER',
     paciente: 'KARIN FERNANDEZ',
     rut: '18887662-K',
     prevision: 'FONASA'
-},
-{
+}, {
     hora: '13:30',
     especialista: 'EDUARDO VIÑUELA',
     paciente: 'HUGO SANCHEZ',
     rut: '17665461-4',
     prevision: 'FONASA'
-},
-{
+}, {
     hora: '14:00',
     especialista: 'RAQUEL VILLASECA',
     paciente: 'ANA SEPULVEDA',
@@ -126,27 +120,35 @@ const dental = [{
 }];
 
 
-let tablaText = `
- <tr>
-     <th>HORA</th>
-     <th>ESPECIALISTA</th>
-     <th>PACIENTE</th>
-     <th>RUT</th>
-     <th>PREVISIÓN</th>
- </tr>
- `
+// funcion para generar la tabla separada para cada especialidad
+function generarTabla(data) {
+    // cabecera de la tabla, a futuro se concatenará con el body de la tabla
+    let tablaText = `
+        <tr>
+            <th>HORA</th>
+            <th>ESPECIALISTA</th>
+            <th>PACIENTE</th>
+            <th>RUT</th>
+            <th>PREVISIÓN</th>
+        </tr>`
 
-radiologia.forEach(function (entry) {
-    tablaText += `
+    // recorrido del objeto
+    data.forEach(function (entry) {
+        tablaText += `
         <tr>
             <td>${entry.hora}</td>
             <td>${entry.especialista}</td>
             <td>${entry.paciente}</td>
             <td>${entry.rut}</td>
             <td>${entry.prevision}</td>
-        </tr>
-    `;
-});
+        </tr>`
+    })
+    return tablaText
+}
 
-document.getElementById("cuerpo-tabla").innerHTML = tablaText
+
+
+document.getElementById("tabla-radiologia").innerHTML = generarTabla(radiologia)
+document.getElementById("tabla-traumatologia").innerHTML = generarTabla(traumatologia)
+document.getElementById("tabla-dental").innerHTML = generarTabla(dental)
 
