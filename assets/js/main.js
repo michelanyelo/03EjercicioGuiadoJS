@@ -120,6 +120,21 @@ const dental = [{
 }];
 
 
+// funcion para mostrar las estadisticas primera y ultima atencion
+// va con validacion en caso que la tabla se encuentre vacia
+function mostrarEstadisticas(data, nombreEspecialidad) {
+    if (data.length > 0) {
+        const primeraAtencion = data[0];
+        const ultimaAtencion = data[data.length - 1];
+
+        document.write(`<p>Primera atención de ${nombreEspecialidad}: ${primeraAtencion.paciente} - ${primeraAtencion.prevision}</p>`);
+        document.write(`<p>Última atención de ${nombreEspecialidad}: ${ultimaAtencion.paciente} - ${ultimaAtencion.prevision}</p>`);
+    } else {
+        document.write(`<p>No hay datos para ${nombreEspecialidad}</p>`);
+    }
+}
+
+
 // funcion para generar la tabla separada para cada especialidad
 function generarTabla(data) {
     // cabecera de la tabla, a futuro se concatenará con el body de la tabla
@@ -147,8 +162,13 @@ function generarTabla(data) {
 }
 
 
-
+// mostrar tabla con los datos, el parametro es la especialidad
 document.getElementById("tabla-radiologia").innerHTML = generarTabla(radiologia)
 document.getElementById("tabla-traumatologia").innerHTML = generarTabla(traumatologia)
 document.getElementById("tabla-dental").innerHTML = generarTabla(dental)
+
+// mostrar la primera y última atención de cada especialidad
+mostrarEstadisticas(radiologia, "Radiología");
+mostrarEstadisticas(traumatologia, "Traumatología");
+mostrarEstadisticas(dental, "Dental");
 
