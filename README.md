@@ -1,7 +1,7 @@
 # 👋 Bienvenida/o al Desafío Guiado - Uso básico de arrays y objetos
 
 ## 📝 Descripción
-Este proyecto es parte del módulo "Fundamentos de programación en JavaScript" del BootCamp Desarrollo de aplicaciones Front End Trainee de DesafíoLatam. El objetivo fue validar conocimientos de sobre la estructura y utilidad de un Array,
+Este proyecto es parte del módulo "Fundamentos de programación en JavaScript" del BootCamp Desarrollo de aplicaciones Front End Trainee de DesafíoLatam. El objetivo fue validar conocimientos sobre la estructura y utilidad de un Array,
 además de la estructura y utilidad de un Objeto
 
 ## 🌐 Tecnologías Utilizadas
