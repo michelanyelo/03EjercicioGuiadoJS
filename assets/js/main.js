@@ -121,10 +121,10 @@ const dental = [{
 
 // funcion para mostrar las estadisticas primera y ultima atencion
 // va con validacion en caso que la tabla se encuentre vacia
-function mostrarEstadisticas(data, primeraClase, ultimaClase) {
-    if (data.length > 0) {
-        const primeraAtencion = data[0];
-        const ultimaAtencion = data[data.length - 1];
+function mostrarEstadisticas(especialidad, primeraClase, ultimaClase) {
+    if (especialidad.length > 0) {
+        const primeraAtencion = especialidad[0];
+        const ultimaAtencion = especialidad[especialidad.length - 1];
 
         // uso textcontent para asignar solo texto, nada de html
         document.querySelector(primeraClase).textContent += `${primeraAtencion.paciente} - ${primeraAtencion.prevision}`;
@@ -143,7 +143,7 @@ mostrarEstadisticas(dental, ".primeraAtencionDental", ".ultimaAtencionDental");
 
 
 // funcion para generar la tabla separada para cada especialidad
-function generarTabla(data, tablaId) {
+function generarTabla(especialidad, tablaId) {
     // cabecera de la tabla, a futuro se concatenará con el body de la tabla
     let tablaText = `
         <tr>
@@ -155,7 +155,7 @@ function generarTabla(data, tablaId) {
         </tr>`
 
     // recorrido del objeto
-    data.forEach(function (propiedad) {
+    especialidad.forEach(function (propiedad) {
         tablaText += `
         <tr>
             <td>${propiedad.hora}</td>
