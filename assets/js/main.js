@@ -155,14 +155,14 @@ function generarTabla(data, tablaId) {
         </tr>`
 
     // recorrido del objeto
-    data.forEach(function (entry) {
+    data.forEach(function (propiedad) {
         tablaText += `
         <tr>
-            <td>${entry.hora}</td>
-            <td>${entry.especialista}</td>
-            <td>${entry.paciente}</td>
-            <td>${entry.rut}</td>
-            <td>${entry.prevision}</td>
+            <td>${propiedad.hora}</td>
+            <td>${propiedad.especialista}</td>
+            <td>${propiedad.paciente}</td>
+            <td>${propiedad.rut}</td>
+            <td>${propiedad.prevision}</td>
         </tr>`
     })
 
